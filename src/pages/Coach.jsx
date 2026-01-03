@@ -91,11 +91,12 @@ const Coach = () => {
                         onChange={(e) => setInput(e.target.value)}
                         onKeyDown={(e) => e.key === 'Enter' && handleSend()}
                         placeholder="Type your update..."
-                        className="flex-1 bg-black/20 border-white/10 focus:border-primary focus:ring-0"
+                        className="flex-1 bg-white/5 border border-white/10 focus:border-primary/50 focus:ring-1 focus:ring-primary/50 text-white placeholder-gray-500 rounded-full px-6 py-3 transition-all"
                     />
                     <button
                         onClick={handleSend}
-                        className="p-3 bg-primary rounded-lg text-white hover:bg-primary-glow transition-all"
+                        disabled={!input.trim()}
+                        className="p-3 bg-primary rounded-full text-white hover:bg-primary-glow transition-all disabled:opacity-50 disabled:cursor-not-allowed hover:scale-105 active:scale-95 shadow-lg shadow-primary/20"
                     >
                         <Send size={20} />
                     </button>

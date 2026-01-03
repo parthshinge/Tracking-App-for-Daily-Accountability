@@ -14,7 +14,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <motion.aside 
+    <motion.aside
       initial={{ x: -260 }}
       animate={{ x: 0 }}
       className="fixed left-0 top-0 h-screen w-[260px] glass-panel border-r border-gray-800 flex flex-col z-50 hidden md:flex"
@@ -24,7 +24,7 @@ const Sidebar = () => {
         <h1 className="text-2xl font-bold font-main flex items-center gap-2">
           <span className="accent-gradient-text">NorthStar</span>
         </h1>
-        <p className="text-xs text-secondary mt-1 opacity-60">Daily Accountability</p>
+        <p className="text-xs text-gray-400 mt-1 opacity-60">Daily Accountability</p>
       </div>
 
       <nav className="flex-1 px-4 py-8 space-y-2">
@@ -35,7 +35,7 @@ const Sidebar = () => {
               key={item.path}
               to={item.path}
               className={`flex items-center gap-3 px-4 py-3 rounded-lg transition-all duration-300 relative group
-                ${isActive ? 'text-white bg-white/10' : 'text-gray-400 hover:text-white hover:bg-white/5'}
+                ${isActive ? 'text-white bg-gradient-to-r from-primary/20 to-primary/5 border-l-2 border-primary' : 'text-gray-400 hover:text-white hover:bg-white/5'}
               `}
             >
               <item.icon size={20} className={isActive ? 'text-primary' : 'group-hover:text-primary transition-colors'} />

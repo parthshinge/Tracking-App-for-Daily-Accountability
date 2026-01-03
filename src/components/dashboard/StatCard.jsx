@@ -9,10 +9,17 @@ const StatCard = ({ title, value, icon: Icon, trend, color = "primary" }) => {
         warning: "text-amber-400 bg-amber-500/10 border-amber-500/20",
     };
 
+    const bgGradients = {
+        primary: "from-indigo-500/10 to-transparent",
+        accent: "from-pink-500/10 to-transparent",
+        success: "from-emerald-500/10 to-transparent",
+        warning: "from-amber-500/10 to-transparent",
+    };
+
     return (
         <motion.div
             whileHover={{ y: -5 }}
-            className="glass-panel p-6 flex flex-col justify-between h-[160px] relative overflow-hidden group"
+            className={`glass-panel p-6 flex flex-col justify-between h-[160px] relative overflow-hidden group bg-gradient-to-br ${bgGradients[color]}`}
         >
             <div className={`absolute top-0 right-0 p-4 opacity-50 transition-opacity group-hover:opacity-100`}>
                 <div className={`p-3 rounded-xl ${colorClasses[color]}`}>

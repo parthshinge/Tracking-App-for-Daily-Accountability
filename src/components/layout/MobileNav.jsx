@@ -11,15 +11,17 @@ const MobileNav = () => {
     ];
 
     return (
-        <div className="fixed bottom-0 left-0 right-0 h-16 bg-[#030712] border-t border-white/10 md:hidden flex items-center justify-around px-4 z-50 glass-panel" style={{ borderRadius: 0 }}>
+        <div className="fixed bottom-0 left-0 right-0 h-20 bg-slate-900/80 backdrop-blur-xl border-t border-white/10 md:hidden flex items-center justify-around px-4 z-50 pb-2">
             {navItems.map((item) => (
                 <NavLink
                     key={item.path}
                     to={item.path}
-                    className={({ isActive }) => `flex flex-col items-center gap-1 p-2 rounded-lg transition-colors ${isActive ? 'text-primary' : 'text-gray-500'
+                    className={({ isActive }) => `flex flex-col items-center gap-1 p-2 rounded-xl transition-all duration-300 ${isActive
+                        ? 'text-primary bg-primary/10 -translate-y-1'
+                        : 'text-gray-500 hover:text-gray-300'
                         }`}
                 >
-                    <item.icon size={20} />
+                    <item.icon size={24} strokeWidth={isActive ? 2.5 : 2} />
                     <span className="text-[10px] font-medium">{item.label}</span>
                 </NavLink>
             ))}

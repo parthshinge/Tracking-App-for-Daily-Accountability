@@ -8,9 +8,11 @@ const HabitItem = ({ habit, onToggle }) => {
             layout
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
             className={`
         glass-panel p-4 flex items-center justify-between group cursor-pointer border-l-4
-        ${habit.completed ? 'border-l-green-500 bg-green-500/5' : 'border-l-transparent hover:bg-white/5'}
+        ${habit.completed ? 'border-l-green-500 bg-green-500/5' : 'border-l-transparent hover:bg-primary/5 hover:border-l-primary/30'}
       `}
             onClick={() => onToggle(habit.id)}
         >
@@ -23,7 +25,15 @@ const HabitItem = ({ habit, onToggle }) => {
                             : 'border-gray-500 group-hover:border-primary'}
           `}
                 >
-                    {habit.completed && <Check size={14} className="text-white" strokeWidth={3} />}
+                    {habit.completed && (
+                        <motion.div
+                            initial={{ scale: 0, rotate: -180 }}
+                            animate={{ scale: 1, rotate: 0 }}
+                            transition={{ type: "spring", stiffness: 400, damping: 10 }}
+                        >
+                            <Check size={14} className="text-white" strokeWidth={3} />
+                        </motion.div>
+                    )}
                 </div>
 
                 <div>

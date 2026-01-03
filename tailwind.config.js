@@ -8,17 +8,21 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#6366f1', // Indigo
-                    glow: 'rgba(99, 102, 241, 0.5)',
+                    DEFAULT: '#2563EB', // Blue-600
+                    hover: '#1d4ed8',   // Blue-700
                 },
-                accent: {
-                    DEFAULT: '#ec4899', // Pink
-                    glow: 'rgba(236, 72, 153, 0.5)',
+                success: {
+                    DEFAULT: '#10B981', // Emerald-500
+                    light: '#d1fae5',   // Emerald-100
+                    text: '#065F46',    // Darker green for text
                 },
                 bg: {
-                    primary: '#030712',
-                    secondary: '#0b1121',
-                    card: 'rgba(30, 41, 59, 0.4)',
+                    main: '#F9FAFB',    // Light gray background
+                    card: '#FFFFFF',    // White card
+                },
+                text: {
+                    main: '#111827',    // Gray-900
+                    muted: '#6B7280',   // Gray-500
                 }
             },
             fontFamily: {
