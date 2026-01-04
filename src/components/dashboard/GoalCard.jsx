@@ -10,8 +10,8 @@ const GoalCard = ({ goal, onToggle, onDelete, onEdit }) => {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.95 }}
             className={`
-                card-base p-4 flex items-center gap-4 group cursor-pointer
-                ${goal.completed ? 'bg-gray-50' : 'bg-white'}
+                card-base p-4 flex items-center gap-4 group cursor-pointer border border-white/5
+                ${goal.completed ? 'bg-white/5 opacity-70' : 'bg-bg-glass hover:bg-bg-card/70'}
             `}
         >
             {/* Checkbox */}
@@ -20,8 +20,8 @@ const GoalCard = ({ goal, onToggle, onDelete, onEdit }) => {
                 className={`
                     flex-shrink-0 w-6 h-6 rounded-full border-2 flex items-center justify-center transition-all duration-300
                     ${goal.completed
-                        ? 'bg-success border-success'
-                        : 'border-gray-300 hover:border-primary'}
+                        ? 'bg-gradient-to-br from-success to-emerald-600 border-transparent shadow-[0_0_10px_rgba(16,185,129,0.3)]'
+                        : 'border-white/20 hover:border-primary bg-white/5'}
                 `}
             >
                 {goal.completed && (
@@ -37,7 +37,7 @@ const GoalCard = ({ goal, onToggle, onDelete, onEdit }) => {
 
             {/* Content */}
             <div className="flex-1 min-w-0" onClick={() => onToggle(goal.id)}>
-                <h3 className={`font-medium truncate transition-all ${goal.completed ? 'text-gray-400 line-through decoration-gray-400' : 'text-gray-900'
+                <h3 className={`font-medium truncate transition-all ${goal.completed ? 'text-text-muted line-through decoration-gray-600' : 'text-text-main'
                     }`}>
                     {goal.text}
                 </h3>
@@ -51,7 +51,7 @@ const GoalCard = ({ goal, onToggle, onDelete, onEdit }) => {
                 </button> */}
                 <button
                     onClick={(e) => { e.stopPropagation(); onDelete(goal.id); }}
-                    className="p-2 text-gray-400 hover:text-red-500 hover:bg-red-50 rounded-lg transition-colors"
+                    className="p-2 text-text-muted hover:text-red-400 hover:bg-red-500/10 rounded-lg transition-colors"
                 >
                     <Trash2 size={16} />
                 </button>

@@ -50,9 +50,13 @@ const Dashboard = () => {
     return (
         <div className="space-y-8 animate-fade-in">
             {/* Hero Section */}
-            <div className="text-center py-8">
-                <h1 className="text-4xl font-bold text-gray-900 mb-2">Track Your Goals & Habits</h1>
-                <p className="text-gray-500 text-lg">Stay consistent, one checkmark at a time.</p>
+            <div className="text-center py-12">
+                <h1 className="text-4xl md:text-5xl font-bold mb-4 bg-gradient-to-r from-white via-gray-200 to-gray-400 bg-clip-text text-transparent tracking-tight">
+                    Track Your Goals & Habits
+                </h1>
+                <p className="text-text-muted text-lg max-w-lg mx-auto leading-relaxed">
+                    Stay consistent, one checkmark at a time. transform your daily routine into a masterpiece.
+                </p>
             </div>
 
             {/* Statistics */}
@@ -66,13 +70,13 @@ const Dashboard = () => {
                         placeholder="What needs to be done?"
                         value={inputText}
                         onChange={(e) => setInputText(e.target.value)}
-                        className="input-field shadow-sm"
+                        className="input-field shadow-lg shadow-black/5"
                         autoFocus
                     />
                     <button
                         type="submit"
                         disabled={!inputText.trim()}
-                        className="btn-primary flex items-center justify-center gap-2 whitespace-nowrap"
+                        className="btn-primary flex items-center justify-center gap-2 whitespace-nowrap min-w-[140px]"
                     >
                         <Plus size={20} />
                         <span>Add Goal</span>
@@ -84,7 +88,7 @@ const Dashboard = () => {
             <div className="max-w-2xl mx-auto mb-20">
                 <AnimatePresence mode="popLayout">
                     {goals.length > 0 ? (
-                        <div className="space-y-3">
+                        <div className="space-y-4">
                             {goals.map(goal => (
                                 <GoalCard
                                     key={goal.id}
@@ -95,11 +99,14 @@ const Dashboard = () => {
                             ))}
                         </div>
                     ) : (
-                        <div className="text-center py-16 bg-white rounded-xl border border-dashed border-gray-300">
-                            <div className="inline-flex p-4 rounded-full bg-gray-50 text-gray-400 mb-4">
-                                <Plus size={32} />
+                        <div className="text-center py-20 rounded-2xl border border-dashed border-white/10 bg-white/5 backdrop-blur-sm">
+                            <div className="inline-flex p-5 rounded-full bg-gradient-to-br from-gray-800 to-gray-900 shadow-inner mb-6 ring-1 ring-white/10">
+                                <Plus size={32} className="text-gray-600" />
                             </div>
-                            <p className="text-lg font-medium text-gray-500">No goals yet — add one!</p>
+                            <h3 className="text-lg font-medium text-text-main mb-2">No goals yet</h3>
+                            <p className="text-text-muted max-w-xs mx-auto">
+                                Start your journey by adding your first goal above.
+                            </p>
                         </div>
                     )}
                 </AnimatePresence>
