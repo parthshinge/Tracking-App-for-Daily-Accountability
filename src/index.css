@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,30 +6,26 @@
 
 @layer base {
   body {
-    @apply bg-bg-main text-text-main font-main antialiased min-h-screen selection:bg-primary/30 selection:text-white;
-    background-image: radial-gradient(circle at 50% 0%, rgba(99, 102, 241, 0.15) 0%, transparent 50%);
+    @apply bg-bg-main text-text-main font-sans antialiased min-h-screen;
+    /* Removed the radial gradient for a cleaner deep dark look as per reference */
   }
 }
 
 @layer components {
   .btn-primary {
-    @apply bg-gradient-primary text-white font-semibold py-2.5 px-6 rounded-lg transition-all duration-300 hover:shadow-lg hover:shadow-primary/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed border border-transparent hover:border-white/10;
+    @apply bg-gradient-primary text-white font-semibold py-3 px-6 rounded-xl transition-all duration-300 hover:shadow-lg hover:shadow-accent-purple/25 hover:-translate-y-0.5 active:translate-y-0 disabled:opacity-50 disabled:cursor-not-allowed;
   }
 
   .btn-outline {
-    @apply bg-transparent border border-gray-700 text-text-secondary font-medium py-2.5 px-6 rounded-lg transition-all duration-200 hover:bg-white/5 hover:border-gray-500 hover:text-white;
+    @apply bg-transparent border border-gray-700 text-text-secondary font-medium py-2.5 px-6 rounded-xl transition-all duration-200 hover:bg-white/5 hover:border-text-secondary hover:text-white;
   }
 
   .card-base {
-    @apply bg-bg-glass backdrop-blur-md border border-white/5 rounded-xl shadow-xl hover:shadow-2xl hover:border-white/10 transition-all duration-300;
-  }
-  
-  .card-gradient {
-    @apply bg-glass-gradient backdrop-blur-md border border-white/5 rounded-xl;
+    @apply bg-bg-card border border-white/5 rounded-2xl p-6 shadow-xl hover:border-white/10 transition-all duration-300;
   }
 
   .input-field {
-    @apply w-full px-4 py-3 rounded-lg border border-gray-700 bg-bg-secondary/50 text-text-main placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-primary/50 focus:border-primary transition-all backdrop-blur-sm;
+    @apply w-full px-4 py-3.5 rounded-xl border border-transparent bg-bg-input text-white placeholder-text-muted focus:outline-none focus:ring-2 focus:ring-accent-purple/50 focus:bg-bg-input/80 transition-all;
   }
 }
 

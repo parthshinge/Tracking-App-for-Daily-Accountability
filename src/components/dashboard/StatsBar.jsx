@@ -6,32 +6,29 @@ const StatsBar = ({ total, completed }) => {
     const percentage = total === 0 ? 0 : Math.round((completed / total) * 100);
 
     return (
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-10 px-4 md:px-0">
-            <div className="card-gradient p-5 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-primary/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="text-sm text-text-muted font-medium mb-2 uppercase tracking-wider">Total Goals</span>
-                <div className="flex items-center gap-2 text-white/90 z-10">
-                    <Trophy size={20} className="text-primary" />
-                    <span className="text-3xl font-bold font-main">{total}</span>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8 px-0">
+            <div className="card-base p-6 flex flex-col items-start justify-center relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Trophy size={48} className="text-primary" />
                 </div>
+                <span className="text-sm text-text-muted font-medium mb-1">Total Goals</span>
+                <span className="text-3xl font-bold text-white">{total}</span>
             </div>
 
-            <div className="card-gradient p-5 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-success/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="text-sm text-text-muted font-medium mb-2 uppercase tracking-wider">Completed</span>
-                <div className="flex items-center gap-2 text-white/90 z-10">
-                    <CheckCircle2 size={20} className="text-success" />
-                    <span className="text-3xl font-bold font-main">{completed}</span>
+            <div className="card-base p-6 flex flex-col items-start justify-center relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <CheckCircle2 size={48} className="text-emerald-500" />
                 </div>
+                <span className="text-sm text-text-muted font-medium mb-1">Completed</span>
+                <span className="text-3xl font-bold text-white">{completed}</span>
             </div>
 
-            <div className="card-gradient p-5 flex flex-col items-center justify-center text-center relative overflow-hidden group">
-                <div className="absolute inset-0 bg-gradient-to-br from-orange-500/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
-                <span className="text-sm text-text-muted font-medium mb-2 uppercase tracking-wider">Remaining</span>
-                <div className="flex items-center gap-2 text-white/90 z-10">
-                    <Circle size={20} className="text-orange-400" />
-                    <span className="text-3xl font-bold font-main">{remaining}</span>
+            <div className="card-base p-6 flex flex-col items-start justify-center relative overflow-hidden group">
+                <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
+                    <Circle size={48} className="text-orange-400" />
                 </div>
+                <span className="text-sm text-text-muted font-medium mb-1">Pending</span>
+                <span className="text-3xl font-bold text-white">{remaining}</span>
             </div>
         </div>
     );

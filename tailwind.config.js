@@ -8,45 +8,36 @@ export default {
         extend: {
             colors: {
                 primary: {
-                    DEFAULT: '#6366f1', // Indigo-500
-                    hover: '#4f46e5',   // Indigo-600
-                    light: '#818cf8',   // Indigo-400
+                    DEFAULT: '#8b5cf6', // Indigo/Purple mix
+                    hover: '#7c3aed',
+                    light: '#a78bfa',
                 },
                 accent: {
-                    DEFAULT: '#8b5cf6', // Violet-500
-                    glow: '#a78bfa',    // Violet-400
-                },
-                success: {
-                    DEFAULT: '#10b981', // Emerald-500
-                    light: '#34d399',   // Emerald-400
-                    bg: 'rgba(16, 185, 129, 0.1)',
+                    pink: '#db2777',
+                    purple: '#9333ea',
                 },
                 bg: {
-                    main: '#0B0F19',    // Deep dark blue/black
-                    secondary: '#111827', // Gray-900
-                    card: '#1F2937',    // Gray-800
-                    glass: 'rgba(31, 41, 55, 0.7)', // Semi-transparent card
+                    main: '#0a0b14',    // Deep Navy/Charcoal
+                    card: '#1a1b26',    // Darker Slate
+                    input: '#24273a',   // Muted Dark Blue for inputs
+                    hover: '#2e3248',
                 },
                 text: {
-                    main: '#F9FAFB',    // Gray-50
-                    secondary: '#E5E7EB', // Gray-200
-                    muted: '#9CA3AF',   // Gray-400
+                    main: '#FFFFFF',
+                    secondary: '#94a3b8', // Slate-400
+                    muted: '#64748b',     // Slate-500
                 },
                 border: {
-                    DEFAULT: '#374151', // Gray-700
-                    light: '#4B5563',   // Gray-600
+                    DEFAULT: '#2e3248',
+                    light: '#4b5563',
                 }
             },
             fontFamily: {
-                main: ['Outfit', 'sans-serif'],
+                sans: ['Inter', 'sans-serif'], // Assuming Inter as per reference
             },
             backgroundImage: {
-                'gradient-primary': 'linear-gradient(135deg, #6366f1 0%, #8b5cf6 100%)',
-                'gradient-dark': 'linear-gradient(to bottom right, #0B0F19, #111827)',
-                'glass-gradient': 'linear-gradient(145deg, rgba(31, 41, 55, 0.6) 0%, rgba(17, 24, 39, 0.8) 100%)',
-            },
-            backdropBlur: {
-                xs: '2px',
+                'gradient-primary': 'linear-gradient(135deg, #9333ea 0%, #db2777 100%)', // Purple to Pink
+                'gradient-card': 'linear-gradient(180deg, #1a1b26 0%, #0a0b14 100%)',
             }
         },
     },

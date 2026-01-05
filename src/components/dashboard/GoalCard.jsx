@@ -11,7 +11,7 @@ const GoalCard = ({ goal, onToggle, onDelete, onEdit }) => {
             exit={{ opacity: 0, scale: 0.95 }}
             className={`
                 card-base p-4 flex items-center gap-4 group cursor-pointer border border-white/5
-                ${goal.completed ? 'bg-white/5 opacity-70' : 'bg-bg-glass hover:bg-bg-card/70'}
+                ${goal.completed ? 'bg-bg-card/50 opacity-60' : 'bg-bg-card hover:bg-bg-card/80 hover:border-primary/20'}
             `}
         >
             {/* Checkbox */}
